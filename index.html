@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сортировка массива (Bubble Sort)</title>
+</head>
+
+<body>
+    <script>
+        /**
+         * Сортировка пузырьком с использованием двух вложенных циклов
+         */
+        function sortArray(arr) {
+            const n = arr.length;
+
+            // Внешний цикл: количество проходов
+            for (let i = 0; i < n; i++) {
+                // Внутренний цикл: сравнение соседних элементов
+                for (let j = 0; j < n - i - 1; j++) {
+                    // Подсказка: сравниваем и меняем, если порядок нарушен
+                    if (arr[j] > arr[j + 1]) {
+                        // Обмен элементов через временную переменную
+                        const temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+            return arr;
+        }
+
+        // Исходный массив
+        const arr = [1, 40, -5, 10, 0];
+
+        // Вывод в консоль браузера
+        console.log("Исходный массив:", arr);
+        console.log("Отсортированный массив:", sortArray(arr));
+    </script>
+</body>
+
+</html>
